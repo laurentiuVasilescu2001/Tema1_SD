@@ -4,6 +4,7 @@ from countSort import countsort
 from quickSort import insertsort,quicksort
 from bubbleSort import bubbleSort
 from shellSort import shellSort
+from radixSort import radixSort
 def verificareBubbleSort(arr):
     d=bubbleSort(arr)
     if d==sorted(arr):
@@ -28,6 +29,13 @@ def verificareQuickSort(arr):
 def verificareShellSort(arr):
     d = shellSort(arr)
     if d==sorted(arr):
+        print("Sortare corecta")
+    else:
+        print("Sortare incorecta")
+
+def verificareRadixSort(arr):
+    d = radixSort(arr)
+    if d == sorted(arr):
         print("Sortare corecta")
     else:
         print("Sortare incorecta")

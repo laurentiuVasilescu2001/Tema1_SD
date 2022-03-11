@@ -4,7 +4,8 @@ from countSort import countsort
 from quickSort import insertsort,quicksort
 from bubbleSort import bubbleSort
 from shellSort import shellSort
-from verificare import verificareBubbleSort,verificareCountSort,verificareQuickSort,verificareShellSort
+from radixSort import radixSort
+from verificare import verificareBubbleSort,verificareCountSort,verificareQuickSort,verificareShellSort,verificareRadixSort
 f = open("teste.in", "w")
 nrlinii=int(input("Nrlinii="))
 f.write(str(nrlinii))
@@ -26,6 +27,7 @@ def generarenumere(n):
 generarenumere(nrlinii)
 
 for i in range (nrlinii):
+
     print("Sortarea facuta cu countsort:")
     start_time=time.time()
     print(countsort(L[i]))
@@ -33,6 +35,7 @@ for i in range (nrlinii):
     print(end_time-start_time)
     verificareCountSort(L[i])
     print("\n")
+
     print("Sortare facuta cu quicksort:")
     start_time=time.time()
     print(quicksort(L[i]))
@@ -55,6 +58,14 @@ for i in range (nrlinii):
     end_time = time.time()
     print(end_time - start_time)
     verificareShellSort(L[i])
+    print("\n")
+
+    print("Sortare facuta cu radixsort:")
+    start_time = time.time()
+    print(radixSort(L[i]))
+    end_time = time.time()
+    print(end_time - start_time)
+    verificareRadixSort(L[i])
     print("\n")
 
     print("Sortare facuta cu sort-ul din python:")
