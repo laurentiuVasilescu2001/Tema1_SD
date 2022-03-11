@@ -3,7 +3,8 @@ import random
 from countSort import countsort
 from quickSort import insertsort,quicksort
 from bubbleSort import bubbleSort
-from verificare import verificareBubbleSort,verificareCountSort,verificareQuickSort
+from shellSort import shellSort
+from verificare import verificareBubbleSort,verificareCountSort,verificareQuickSort,verificareShellSort
 f = open("teste.in", "w")
 nrlinii=int(input("Nrlinii="))
 f.write(str(nrlinii))
@@ -39,6 +40,7 @@ for i in range (nrlinii):
     print(end_time-start_time)
     verificareQuickSort(L[i])
     print("\n")
+
     print("Sortare facuta cu bubblesort:")
     start_time = time.time()
     print(bubbleSort(L[i]))
@@ -46,6 +48,15 @@ for i in range (nrlinii):
     print(end_time - start_time)
     verificareBubbleSort(L[i])
     print("\n")
+
+    print("Sortare facuta cu shellsort:")
+    start_time = time.time()
+    print(shellSort(L[i]))
+    end_time = time.time()
+    print(end_time - start_time)
+    verificareShellSort(L[i])
+    print("\n")
+
     print("Sortare facuta cu sort-ul din python:")
     start_time = time.time()
     print(sorted(L[i]))
